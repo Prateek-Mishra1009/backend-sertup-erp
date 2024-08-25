@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Mulish", sans-serif;
+      display: flex;
+      justify-content: center;
+      font-size: 0.8rem;
+    }
+
+    .main-container {
+      /* border: 1px solid #ddd; */
+      width: 99%;
+    }
+
+    .profile_form_box,
+    .main-box-padding {
+      padding: 1.4rem;
+      background: white;
+      border-radius: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      /* width: 80%; */
+    }
+
+    .main-container .main-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.5rem 1.4rem;
+      box-shadow: 0px 2px 4px -2px #1018280f;
+      box-shadow: 0px 4px 8px -2px #1018281a;
+    }
+
+    .main-header .mh-text {
+      padding: 0.5rem;
+      border-left: 5px solid #f65365;
+      color: var(--Color-Neutral-50, #454545);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    .main-header img {
+      height: 60px;
+    }
+
+    .gray-border {
+      border: 1px solid #bfbfbf;
+      border-radius: 0.4rem;
+      padding: .7rem;
+    }
+
+    .flex {
+      display: flex;
+    }
+
+    .flex-direction-column {
+      flex-direction: column;
+    }
+
+    .gap-8 {
+      gap: 2rem;
+    }
+
+    .w-full {
+      width: 100%;
+    }
+
+    .address-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .remove-margin {
+      margin: 0;
+    }
+
+    .dash-border {
+      margin: 0 3rem 0;
+      width: 1px;
+      top: 0;
+      bottom: 0;
+      position: relative;
+      border-right: 1px dashed #bfbfbf;
+    }
+
+    .profile_personal_details .details-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1rem;
+    }
+
+    .details-controls h2 {
+      margin: 0;
+      /* padding-bottom: 1rem; */
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f65365;
+    }
+
+    .gray-border .heading {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #f65365;
+      padding-bottom: 1rem;
+    }
+
+    .col1 .card-title,
+    .col1 h3.card-name {
+      margin: 0;
+      padding-bottom: 1rem;
+      color: #454545;
+    }
+
+    .col1 .card-address {
+      margin: 0;
+      padding-bottom: 0.8rem;
+      color: #595959;
+    }
+
+    .card-address p {
+      margin: 0;
+    }
+
+    .tp-inner hr,
+    .main-box-padding hr {
+      border-bottom: 1px dashed #bfbfbf;
+      width: 95%;
+      border-top: none;
+      border-left: none;
+      margin: 0.5rem;
+    }
+
+    .gap-2 {
+      gap: 0.5rem;
+    }
+
+    .main-container .data-table-container {
+      background: white;
+      padding: 1.875rem 1.5625rem;
+      border-radius: 0.7rem;
+    }
+
+    .data-table-container .data-table-box {
+      margin-top: 1rem;
+      border: 1px solid #e6e6e6;
+      border-radius: 5px;
+      width: 100%;
+      /* overflow-x: auto; */
+      /* scrollbar-width: none; */
+    }
+
+    .scrollbar-visible {
+      scrollbar-width: 5px;
+    }
+
+    .data-table-box .data-table {
+      width: 100%;
+      text-align: center;
+      border-collapse: collapse;
+      /* white-space: nowrap; */
+      /* min-width: 43.75rem; */
+    }
+
+    .data-table thead tr,
+    .data-table tbody tr {
+      color: #757575;
+      border-bottom: 1px solid #bfbfbf;
+    }
+
+    .data-table th,
+    .data-table td {
+      color: #888;
+      padding: 0.3rem;
+      max-width: 40px;
+      word-break: break-all;
+      text-align: center;
+    }
+
+    .data-table th {
+      word-break: keep-all;
+      /* width: 20%;
+        white-space: nowrap; */
+    }
+
+    .data-table.fix-width-table-row th:nth-child(2),
+    .data-table.fix-width-table-row td:nth-child(2) {
+      width: 36%;
+      text-align: left;
+    }
+
+    .data-table.preview-data-table th,
+    .data-table.preview-data-table th:nth-child(2),
+    .data-table.preview-data-table td:nth-child(2) {
+      width: auto;
+      text-align: center;
+    }
+
+    .data-table.preview-data-table .preview-td {
+      border-right: 1px solid #bfbfbf;
+    }
+
+    .data-table.preview-data-table .preview-td:last-child {
+      border-right: none;
+    }
+
+    .stamp-box img {
+      object-fit: fill;
+      height: 100%;
+      width: 100%;
+    }
+
+    .stamp-box {
+      width: 100px;
+      height: 60px;
+    }
+
+    .logo-stamp {
+      justify-content: flex-end;
+      padding: 1rem 0rem;
+    }
+
+    .tp-main .tp-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.2rem 0rem;
+      color: #252525;
+      font-weight: 500;
+    }
+
+    .tp-inner span {
+      flex-shrink: 0;
+    }
+
+    .data-table.preview-data-table th {
+      color: #f65365;
+    }
+
+    .form-group .input-field {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .input-field .toggle-label {
+      position: absolute;
+      top: 1.3rem;
+      left: 1rem;
+      font-size: 1rem;
+      transform: translateY(-50%);
+      transition: all 0.3s;
+      pointer-events: none;
+      color: #212229;
+      z-index: 1;
+      opacity: 0.7;
+    }
+
+    .input-field.active .toggle-label {
+      top: 0.3rem;
+      left: 0.7rem;
+      transform: translateY(-100%);
+      background-color: #fff;
+      padding: 0 0.5rem;
+      font-size: 0.75rem;
+      color: #344767;
+      font-weight: 500;
+      opacity: 1;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      font-weight: 500;
+      font-size: 0.9rem;
+      border-radius: 6px;
+      outline: none;
+      color: #333;
+      background: #fff;
+      border: 1px solid #d2d6da;
+      padding: 0.8rem 0.75rem;
+    }
+
+    .input-field textarea {
+      min-height: 5rem;
+      max-height: 20rem;
+      text-transform: capitalize;
+      resize: vertical;
+    }
+
+    .form-group .form-input {
+      padding: 0.75rem;
+      background-color: white;
+      border: 1px solid #d7cece;
+      border-radius: 0.5rem;
+      font-family: "Plus Jakarta Sans", sans-serif;
+      /* line-height: 1rem; */
+    }
+
+    .input-field textarea.disabeldTextArea {
+      background-color: #e2e2e24b;
+      cursor: not-allowed;
+      resize: none;
+    }
+
+    .cm-txt {
+      color: #f65365;
+      font-weight: 500;
+      padding-left: 0.2rem;
+    }
+
+    /* @media print {
+        body {
+          width: 21cm;
+          height: 29.7cm;
+          margin: 30mm 45mm 30mm 45mm;
+        }
+      } */
+  </style>
+</head>
+
+<body>
+  <div class="main-container">
+    <div class="main-header">
+      <div class="mh-text">Purchase Order Detail</div>
+      <div class="mh-logo">
+        <img class="stamp-img"
+          src="https://poonamcoatings.com/wp-content/uploads/2023/08/Poonam-Sales-Final-Logo-2048x1229.png" alt="" />
+      </div>
+    </div>
+    <div class="main-box-padding" style="border-radius: 0.4rem">
+      <div class="gray-border">
+        <div class="flex">
+          <div class="w-full">
+            <p class="remove-margin">
+              <b>GST Number : </b>
+              {{data.buyer_gst}}
+            </p>
+          </div>
+          <div class="dash-border"></div>
+
+          <div class="w-full">
+            <p class="remove-margin">
+              <b>PAN No. : </b>
+              {{data.buyer_pan}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="gray-border flex flex-direction-column gap-8">
+        <div class="modelEx_content singleAdd w-full address-grid">
+          <div>
+            <div class="profile_personal_details">
+              <div class="details-controls">
+                <h2>Supplier Details</h2>
+              </div>
+            </div>
+            <div class="location-collection flex">
+              <div class="card">
+                <div class="col1">
+                  <h3 class="card-name">{{data.supplierDetails.name}}</h3>
+
+                  <div class="card-address">
+                    <p>{{data.primary_shipping_Details.address.line_one}},</p>
+                    <p>{{data.primary_shipping_Details.address.line_two}}</p>
+                    <p>Contact No: {{data.primary_shipping_Details.phone}}</p>
+                    <p style="margin-top: 0.7rem">GSTIN - {{data.supplier_gst}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modelEx_content singleAdd w-full">
+            <div class="profile_personal_details">
+              <div class="details-controls">
+                <h2>Buyer Details</h2>
+              </div>
+            </div>
+            <div class="location-collection flex">
+              <div class="card">
+                <div class="col1">
+                  <h3 class="card-name">{{data.shippingDetails.name}}</h3>
+
+                  <div class="card-address">
+                    <p>{{data.primary_shipping_Details.address.line_one}},</p>
+                    <p>{{data.primary_shipping_Details.address.line_two}}</p>
+                    <p>Contact No: {{data.primary_shipping_Details.phone}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <div class="modelEx_content singleAdd w-full">
+              <div class="profile_personal_details">
+                <div class="details-controls">
+                  <h2>Delivery Location</h2>
+                </div>
+              </div>
+              <div class="location-collection flex">
+                <div class="card">
+                  <div class="col1">
+                    <h3 class="card-name">Poonam Coatings</h3>
+
+                    <div class="card-address">
+                      <p>{{data.shippingDetails.address.line_one}},</p>
+                      <p>{{data.shippingDetails.address.line_two}}</p>
+                      <p>Contact No: {{data.shippingDetails.phone}}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="flex">
+               
+
+                <div class="dash-border"></div>
+                
+              </div> -->
+          </div>
+        </div>
+        <!-- <hr style="width: 100%; margin: 0" /> -->
+      </div>
+
+      <div class="gray-border">
+        <h2 class="heading">Purchase Order Details</h2>
+        <div class="flex flex-direction-column gap-2">
+          <div class="flex">
+            <div class="w-full">
+              <p class="remove-margin">
+                <b>Document Number : </b>
+                {{data.primaryDetails.documentNumber}}
+
+              </p>
+            </div>
+            <div class="dash-border"></div>
+
+            <div class="w-full">
+              <p class="remove-margin">
+                <b>Document Date. : </b>
+                {{ formatDate data.primaryDetails.documentDate}}
+              </p>
+            </div>
+          </div>
+          <div class="flex">
+
+            <div class="w-full">
+              <p class="remove-margin">
+                <b>Selling Officer : </b>
+                {{data.primaryDetails.contactPerson}}
+              </p>
+            </div>
+            <div class="dash-border"></div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <div class="data-table-container" style="padding: 0">
+        <div class="data-table-box scrollbar-visible" style="margin: 0; border: 1px solid #bfbfbf">
+          <table class="data-table fix-width-table-row preview-data-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Product Name</th>
+                <th>HSN Code</th>
+                <th>Pack Quantity</th>
+                <th>No. of Packs</th>
+                <th>Total Quantity</th>
+                <th>Total Amount</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              {{#each data.items}}
+              <tr>
+                <td class="preview-td">{{inc @index}}</td>
+                <td class="preview-td">{{this.name}}</td>
+                <td class="preview-td">{{this.hsn}}</td>
+                <td class="preview-td">{{this.quantityInPack}} {{this.unitData.uom_type}}</td>
+                <td class="preview-td">{{this.noOfPacks}}</td>
+                <td class="preview-td">{{this.totalQuantity}} {{this.unitData.uom_type}}s</td>
+                <td class="preview-td">{{this.totalAmount}}</td>
+
+
+
+              </tr>
+              {{/each}}
+              <tr style="border-bottom: none">
+                <td class="preview-td" colspan="4">Gross Total:</td>
+                <td class="preview-td">{{data.totalPacks}}</td>
+                <td class="preview-td" style="border-right: 1px solid #bfbfbf">
+                  {{data.grandQuantity}}
+                </td>
+                <td class="preview-td">{{data.subtotal}}</td>
+
+              </tr>
+
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="tp-main">
+        <div class="tp-inner">
+          <span>Subtotal :</span>
+          <hr />
+          <span>₹{{data.subtotal}}</span>
+        </div>
+        <div class="tp-inner">
+          <span>Taxes :</span>
+          <hr />
+          <span>₹{{data.taxes}}</span>
+        </div>
+        <div class="tp-inner">
+          <span>Grand Total :</span>
+          <hr />
+          <span>₹{{data.grandTotal}}</span>
+        </div>
+        <div class="tp-inner">
+          <span>Amount in words Total :</span>
+          <hr />
+          <span>{{amountInwords}}</span>
+        </div>
+      </div>
+
+      <form class="">
+        <div class="form-group">
+          <div class="input-field active">
+            <!-- <label htmlFor="about_us" 
+              class="toggle-label"> Comment </label> -->
+            <div class="cm-txt">Comment</div>
+            <div id="about_us" name="about_us" rows="4" class="form-input disabeldTextArea" disabled="true">
+              {{data.comment}}
+            </div>
+          </div>
+      </form>
+
+      <div class="logo-stamp flex">
+        <div class="stamp-box">
+          <img class="stamp-img"
+            src="{{{signatureUrl}}}" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
